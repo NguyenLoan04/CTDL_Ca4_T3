@@ -1,0 +1,18 @@
+package lab_3;
+
+import java.util.Comparator;
+
+public class OrderItem  {
+    private Product p;
+    private int quality;
+
+    public Product getProduct() {
+        return p;
+    }
+
+    public int getQuality() {
+        return quality;
+    }
+
+
+}
