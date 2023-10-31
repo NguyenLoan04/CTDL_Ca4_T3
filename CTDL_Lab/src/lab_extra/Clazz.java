@@ -72,19 +72,19 @@ public class Clazz {
     // remove a student with a given id
     public boolean removeStudent(String id) {
         // TODO
-		for (int i=0;i<students.size();i++){
-			if(students.get(i).isSameID(id)) students.remove(students.get(i));
-			return true;
-		}
-		return false;
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).isSameID(id)) students.remove(students.get(i));
+            return true;
+        }
+        return false;
     }
 
     // get all students who were born in a given birth year.
     public ArrayList<Student> getStudentByBirthYear(int birthYear) {
         // TODO
-		ArrayList<Student> result= new ArrayList<>();
-        for (int i=0;i<students.size();i++){
-            if(students.get(i).iBorn(birthYear))
+        ArrayList<Student> result = new ArrayList<>();
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).iBorn(birthYear))
                 result.add(students.get(i));
         }
         return result;
@@ -93,8 +93,8 @@ public class Clazz {
     // similar as toString method, this method prints the name, year, and all
     // students of the class. Note that, using iterator
     public void display() {
-        for (int i=0;i<students.size();i++){
-            System.out.println(students.get(i).toString()+" ");
+        for (int i = 0; i < students.size(); i++) {
+            System.out.println(students.get(i).toString() + " ");
         }
         System.out.println();
     }
@@ -109,11 +109,20 @@ public class Clazz {
     public static void main(String[] args) {
         Clazz test = new Clazz("DH22DTA", "2022");
         ArrayList<Student> lop = new ArrayList<>();
-        lop.add(new Student("123", "Loan", "Nguyen", 2004, 3.79));
-        lop.add(new Student("123", "Loan", "Nguyen", 2004, 3.89));
-        lop.add(new Student("123", "Loan", "Nguyen", 2004, 3.99));
-        lop.add(new Student("123", "Loan", "Nguyen", 2004, 3.86));
-        lop.add(new Student("123", "Loan", "Nguyen", 2004, 3.88));
+        lop.add(new Student("18130006", "Trong", "Nguyen", 1997, 7.5));
+        lop.add(new Student("18130090", "Phi", "Hoang", 1997, 5.5));
+//        lop.add(new Student("123", "Loan", "Nguyen", 2004, 3.99));
+//        lop.add(new Student("123", "Loan", "Nguyen", 2004, 3.86));
+//        lop.add(new Student("123", "Loan", "Nguyen", 2004, 3.88));
+        lop.add(new Student("18130086", "An", "Ly", 1998, 8.5));
+        lop.add(new Student("18130024","Anh", "Pham", 1998, 9.5));
+        lop.add(new Student("18130105", "Ngoc", "Phan", 1999, 9.0));
+        lop.add(new Student("18130206","Tam", "Ly", 1994, 8.5));
+        lop.add(new Student("18130110", "Lan", "Nguyen", 1996, 8.0));
+        lop.add(new Student("18130056", "Vu","Dang" ,1995, 7.5));
+        lop.add(new Student("18130012", "Dung","Tran" ,1994, 6.5));
+        lop.add(new Student("18130045", "Thao","Le" ,1993, 7.0));
+
         test.setStudents(lop);
 //        test.sortStudents(new ByGPA());
 //		print(test.getRandomNStudents(3));
