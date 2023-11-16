@@ -33,6 +33,7 @@ public class TextAnalyzer {
                 String word = tokens.nextToken();
                 if (!tokens.hasMoreTokens()) { // kiểm tra xem từ đó có ở cuối hàng hay không
                     add(word, -index);
+                    index++;
                 } else {
                     add(word, index++); // tăng index
                 }
@@ -53,9 +54,11 @@ public class TextAnalyzer {
         if (map.containsKey(word)) {
             map.get(word).add(position);
         }
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(position);
-        map.put(word, list);
+        else {
+            ArrayList<Integer> list = new ArrayList<>();
+            list.add(position);
+            map.put(word, list);
+        }
     }
 
     // This method should display the words of the text file along with the
@@ -117,7 +120,6 @@ public class TextAnalyzer {
     public static void main(String[] args) throws IOException {
         TextAnalyzer test = new TextAnalyzer("src/lab_8_Map/data/short.txt");
 //		test.displayWords();
-        System.out.print(test.listValue());
-//        test.displayText();
+        test.displayText();
     }
 }
